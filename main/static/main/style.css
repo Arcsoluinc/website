@@ -1,0 +1,279 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 15px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4a261;
+}
+
+/* Mobile Menu Button */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.home-container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Left Side: Text */
+.home-text {
+    flex: 1;
+    text-align: left;
+}
+
+.home-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.home-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Right Side: Image */
+.home-image {
+    flex: 1;
+}
+
+.home-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?technology,business') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #00aaff;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.about {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+/* Carousel Container */
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide all slides by default */
+.slides .slide {
+    display: none;
+    text-align: center;
+}
+
+/* Slide Images */
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Slide Text */
+.slide p {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    transform: translateY(-50%);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: #091540;
+    color: white;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: #00aaff;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #091540;
+    color: white;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 200px;
+        text-align: right;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

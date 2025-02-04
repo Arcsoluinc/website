@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArcSolu Inc.</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1 class="logo">ArcSolu Inc.</h1>
+        <!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">ArcSolu Inc.</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- Mobile Menu Button -->
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</nav>
+
+    </header>
+
+    <!-- Home Section -->
+<section id="home" class="home">
+    <div class="home-container">
+        <!-- Left Side: Company Description -->
+        <div class="home-text">
+            <h1>Welcome to ArcSolu Inc.</h1>
+            <p>
+                ArcSolu Inc. is a leading provider of innovative business solutions, 
+                specializing in cutting-edge technology, AI-driven analytics, and enterprise growth strategies. 
+                Our mission is to empower businesses with scalable solutions, ensuring long-term success and efficiency.
+            </p>
+        </div>
+
+        <!-- Right Side: Big Image -->
+        <div class="home-image">
+            <img src="{% static 'main/solu.jpg' %}" alt="ArcSolu Inc.">
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section with Carousel -->
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>ArcSolu Inc. is dedicated to providing top-tier business solutions. Our team of experts ensures quality and efficiency in every project.</p>
+    
+    <!-- Carousel Container -->
+    <div class="carousel">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+
+        <div class="slides">
+            <div class="slide fade">
+                <img src="{% static 'main/Team-meeting-ideas.webp' %}" alt="Image 1">
+                <p>Innovative Tech Solutions</p>
+            </div>
+            <div class="slide fade">
+                <img src="{% static 'main/team-meeting-1.webp' %}" alt="Image 2">
+                <p>Expert Team Collaboration</p>
+            </div>
+            <div class="slide fade">
+                <img src="{% static 'main/ai.jpg' %}" alt="Image 3">
+                <p>AI-Powered Innovations</p>
+            </div>
+            <div class="slide fade">
+                <img src="{% static 'main/handshake.jpg' %}" alt="Image 4">
+                <p>Scaling Businesses to Success</p>
+            </div>
+            <div class="slide fade">
+                <img src="{% static 'main/global.jpg' %}" alt="Image 5">
+                <p>Global Financial Impact</p>
+            </div>
+        </div>
+
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 ArcSolu Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+        
+        function showSlides() {
+            slides.forEach(slide => slide.style.display = "none");
+            slideIndex++;
+            if (slideIndex > totalSlides) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change every 2 seconds
+        }
+        
+        // Change slide manually
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+            if (slideIndex >= totalSlides) { slideIndex = 0; }
+            slides.forEach(slide => slide.style.display = "none");
+            slides[slideIndex].style.display = "block";
+        }
+        
+        // Start the automatic slideshow
+        document.addEventListener("DOMContentLoaded", showSlides);
+        </script>
+</body>
+</html>
