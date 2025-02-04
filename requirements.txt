@@ -1,0 +1,22 @@
+asgiref @ file:///C:/b/abs_ae1n0p_8_w/croot/asgiref_1724072476516/work
+certifi==2025.1.31
+cffi==1.17.1
+charset-normalizer==3.4.1
+colorama==0.4.6
+cryptography==44.0.0
+Django @ file:///C:/b/abs_d8jy6px5xv/croot/django_1731616483677/work
+django-oauth-toolkit==3.0.1
+exceptiongroup==1.2.2
+idna==3.10
+iniconfig==2.0.0
+jwcrypto==1.5.6
+oauthlib==3.2.2
+packaging==24.2
+pluggy==1.5.0
+pycparser==2.22
+pytest==8.3.4
+requests==2.32.3
+sqlparse @ file:///C:/b/abs_68npyz0s6_/croot/sqlparse_1734704476369/work
+tomli==2.2.1
+typing_extensions @ file:///C:/b/abs_0ffjxtihug/croot/typing_extensions_1734714875646/work
+urllib3==2.3.0
